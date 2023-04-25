@@ -16,16 +16,22 @@ function App() {
         .then((data) => setWeather(data));
     }
 
-    fetchWeather();
-  }, [query, units])
+    fetchWeather(); }, [query, units]);
 
+  const formatBackground = () => {
+    if (!weather) return "from-cyan-700 to-blue-700";
+    const threshold = (units === "metric") ? 20 : 68;
+    if (weather.temp <= threshold) return "from-cyan-700 to-blue-700";
+
+    return "from-yellow-700 to-orange-700";
+  }
 
   return (
-    <div className="min-h-screen mx-auto flex flex-col justify-between w-full py-2 px-5 bg-gradient-to-bl from-cyan-700 to-blue-700 shadow-xl shadow-gray-500">
+    <div className={`min-h-screen mx-auto flex flex-col justify-between w-full py-2 px-5 bg-gradient-to-bl ${formatBackground()} shadow-xl shadow-gray-500`}>
       {weather && <TimeAndLocation weather={weather} />}
-      {weather && <TemperatureAndDetails  weather={weather} />}
+      {weather && <TemperatureAndDetails weather={weather} />}
       <h1 className="text-2xl text-center font-bold text-white">What do I wear today?</h1>
-      <SearchBar setQuery={setQuery} />
+      <SearchBar setQuery={setQuery} setUnits={setUnits} />
     </div>
   );
 }
