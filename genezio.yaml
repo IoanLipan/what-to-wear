@@ -1,0 +1,12 @@
+name: what-to-wear
+region: eu-central-1
+cloudProvider: aws
+sdk:
+  language: js
+  options:
+    runtime: browser
+  path: ./sdk/
+classes:
+  - path: ./src/weatherAppServer.js
+    type: jsonrpc
+    methods: []

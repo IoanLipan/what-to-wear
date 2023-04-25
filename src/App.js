@@ -4,10 +4,12 @@ import TimeAndLocation from './components/TimeAndLocation';
 import TemperatureAndDetails from './components/TemperatureAndDetails';
 import getFormattedWeatherData from './services/weatherService';
 import WearSuggestion from './components/WearSuggestion';
+import { WeatherAppServer } from './weatherAppServer';
 
 function App() {
+  const RandomLocation = WeatherAppServer.make();
 
-  const [query, setQuery] = useState({ q: "Barcelona" });
+  const [query, setQuery] = useState({ q: RandomLocation });
   const [units, setUnits] = useState('metric');
   const [weather, setWeather] = useState(null);
 
