@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar';
 import TimeAndLocation from './components/TimeAndLocation';
 import TemperatureAndDetails from './components/TemperatureAndDetails';
 import getFormattedWeatherData from './services/weatherService';
+import WearSuggestion from './components/WearSuggestion';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
     <div className={`min-h-screen mx-auto flex flex-col justify-between w-full py-2 px-5 bg-gradient-to-bl ${formatBackground()} shadow-xl shadow-gray-500`}>
       {weather && <TimeAndLocation weather={weather} />}
       {weather && <TemperatureAndDetails weather={weather} />}
-      <h1 className="text-2xl text-center font-bold text-white">What do I wear today?</h1>
+      {weather && <WearSuggestion weather={weather} />}
       <SearchBar setQuery={setQuery} setUnits={setUnits} />
     </div>
   );
