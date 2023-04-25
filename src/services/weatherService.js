@@ -28,7 +28,7 @@ const formatCurrentWeather = (data) => {
   const { main: details, icon } = weather[0]
 
   return {
-    lat, lon, temp, feels_like, temp, temp_max, temp_min, humidity, name, dt, country, sunrise, sunset, details, icon, speed
+    lat, lon, feels_like, temp, temp_max, temp_min, humidity, name, dt, country, sunrise, sunset, details, icon, speed
   }
 }
 
@@ -38,7 +38,7 @@ const getFormattedWeatherData = async (searchParams) => {
   return formattedCurrentWeather;
 };
 
-const formatToLocalTime = (secs, zone, format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a") => {
+const formatToLocalTime = (secs, zone, format = "cccc, dd LLL yyyy' | 'hh:mm a") => {
   return DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 };
 
