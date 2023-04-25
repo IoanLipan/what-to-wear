@@ -3,6 +3,8 @@ import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons'
 import PopularLocations from './PopularLocations'
 
 function SearchBar() {
+
+
   return (
     <div className='flex justify-center w-full my-6 sm:px-4 text-white items-center'>
       <div className='flex w-3/4 justify-start gap-2 items-center'>
