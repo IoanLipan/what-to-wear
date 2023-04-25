@@ -6,9 +6,9 @@ import getFormattedWeatherData from './services/weatherService';
 
 function App() {
 
-  const [query, setQuery] = useState({ q: "berlin" })
-  const [units, setUnits] = useState('metric')
-  const [weather, setWeather] = useState(null)
+  const [query, setQuery] = useState({ q: "berlin" });
+  const [units, setUnits] = useState('metric');
+  const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -25,7 +25,7 @@ function App() {
       {weather && <TimeAndLocation weather={weather} />}
       {weather && <TemperatureAndDetails  weather={weather} />}
       <h1 className="text-2xl text-center font-bold text-white">What do I wear today?</h1>
-      <SearchBar />
+      <SearchBar setQuery={setQuery} />
     </div>
   );
 }
