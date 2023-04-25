@@ -5,7 +5,10 @@ sdk:
   language: js
   options:
     runtime: browser
-  path: ./sdk/
+  path: src/sdk/
+frontend:
+  path: build
+  subdomain: rose-junior-opossum
 classes:
   - path: ./src/weatherAppServer.js
     type: jsonrpc

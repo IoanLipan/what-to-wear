@@ -1,5 +1,5 @@
 export class WeatherAppServer {
-  make() {
+  randomLocation() {
     const locations = [
       "Kabul", "Tirana", "Algiers", "Andorra la Vella", "Luanda", "Saint John's",
       "Buenos Aires", "Yerevan", "Canberra", "Vienna", "Baku", "Nassau", "Manama",
@@ -31,4 +31,7 @@ export class WeatherAppServer {
 
     return location;
   }
+  // apiKey() {
+  //   return "120c414439f98f2793a525cb2bf535e0";
+  // }
 }

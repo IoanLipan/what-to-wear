@@ -4,12 +4,13 @@ import TimeAndLocation from './components/TimeAndLocation';
 import TemperatureAndDetails from './components/TemperatureAndDetails';
 import getFormattedWeatherData from './services/weatherService';
 import WearSuggestion from './components/WearSuggestion';
-import { WeatherAppServer } from './weatherAppServer';
+// import { WeatherAppServer } from './sdk/weatherAppServer.sdk';
 
 function App() {
-  const RandomLocation = WeatherAppServer.make();
+  // const initialLocation = WeatherAppServer.randomLocation();
+  const initialLocation = "Berlin";
 
-  const [query, setQuery] = useState({ q: RandomLocation });
+  const [query, setQuery] = useState({ q: initialLocation });
   const [units, setUnits] = useState('metric');
   const [weather, setWeather] = useState(null);
 
@@ -17,9 +18,9 @@ function App() {
     const fetchWeather = async () => {
       await getFormattedWeatherData({ ...query, units })
         .then((data) => setWeather(data));
-    }
-
-    fetchWeather(); }, [query, units]);
+    };
+    fetchWeather();
+  }, [query, units]);
 
   const formatBackground = () => {
     if (!weather) return "from-cyan-700 to-blue-700";
@@ -30,7 +31,7 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen mx-auto flex flex-col justify-between w-full py-2 px-5 bg-gradient-to-bl ${formatBackground()} shadow-xl shadow-gray-500`}>
+    <div className={`min-h-screen h-screen overscroll-none mx-auto flex justify-between flex-col gap-4 w-full py-2 px-5 bg-gradient-to-bl ${formatBackground()} shadow-xl shadow-gray-500`}>
       {weather && <TimeAndLocation weather={weather} />}
       {weather && <TemperatureAndDetails weather={weather} />}
       {weather && <WearSuggestion weather={weather} />}

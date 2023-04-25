@@ -12,8 +12,4 @@ export class WeatherAppServer {
     return WeatherAppServer.remote.call("WeatherAppServer.randomLocation")
   }
 
-  static async apiKey() {
-    return WeatherAppServer.remote.call("WeatherAppServer.apiKey")
-  }
-
 }
