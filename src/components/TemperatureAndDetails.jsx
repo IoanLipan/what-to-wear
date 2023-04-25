@@ -18,10 +18,10 @@ function TemperatureAndDetails({ weather: {
     <div className='flex flex-col items-center text-white'>
       <p className="text-3xl sm:py-6">{details}</p>
 
-      <div className='flex flex-col sm:flex-row gap-4 sm:gap-0 pb-8 items-center justify-around w-full'>
-        <img src={iconUrlFromCode(icon)} alt="" className='w-24' />
+      <div className='flex flex-wrap sm:flex-row gap-4 sm:gap-0 items-center justify-around w-full'>
+        <img src={iconUrlFromCode(icon)} alt="" className='w-20 sm:w-32 md:w-40' />
         <p className='text-5xl font-medium'>{`${temp.toFixed()}°`}</p>
-        <div className='flex scale-150 items-center'>
+        <div className='flex scale-150 items-center pr-4'>
           <UilTemperature className="mr-1" size={18} />
           <p className='font-light'>Real feel:</p>
           <span className='font-bold ml-1'>{`${feels_like.toFixed()}°`}</span>

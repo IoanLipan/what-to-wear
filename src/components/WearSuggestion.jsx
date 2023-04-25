@@ -3,9 +3,8 @@ import React from 'react'
 function WearSuggestion({ weather: {
   temp, details
 } }) {
-  console.log(temp);
   return (
-    <div className='flex flex-wrap justify-center items-center gap-5 mx-auto text-2xl text-center text-white
+    <div className='flex flex-wrap justify-center items-center sm:gap-5 mx-auto text-2xl text-center text-white
           bg-opacity-30 bg-black p-2 px-5 border-0 rounded-2xl w-fit'>
       <h1 className="">What should you wear today?</h1>
       <div className='font-bold'>
