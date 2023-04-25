@@ -37,16 +37,16 @@ function SearchBar({ setQuery, units, setUnits, weather }) {
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
           onKeyDown={handleEnterKey}
-          className='border-8 pl-2 border-transparent rounded-3xl outline-none text-black capitalize placeholder:lowercase w-full'
+          className='border-8 pl-2 border-transparent h-12 rounded-3xl outline-none text-black capitalize placeholder:lowercase w-full'
           placeholder='Search location...'
         />
-        <UilSearch size="25"
-          className="text-cyan-600 relative right-10 button-scale-on-hover"
+        <UilSearch size="35"
+          className="text-gray-800 relative right-10 button-scale-on-hover"
           onClick={handleSearchClick}
         />
         <UilLocationPoint
           onClick={handleLocationClick}
-          size="25"
+          size="40"
           className="text-white relative right-6 button-scale-on-hover"
         />
       </div>

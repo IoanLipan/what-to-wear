@@ -37,7 +37,7 @@ function PopularLocations({setQuery, weather, units}) {
 
   return <div className="text-white flex justify-start items-center">
     { showPopular
-      ? <div className={`flex z-10 h-12 w-11/12 absolute items-center justify-around
+      ? <div className={`flex z-10 h-14 w-11/12 absolute items-center justify-around
               bg-gradient-to-l ${formatBackground}
               transition duration-300 ease-in-out transform border-transparent rounded-xl`}>
           {cities.map((city) => (
@@ -45,9 +45,9 @@ function PopularLocations({setQuery, weather, units}) {
               {city.title}
             </button>))
           }
-          <UilTimes onClick={closePopular} className='button-scale-on-hover' />
+          <UilTimes size="30" onClick={closePopular} className='button-scale-on-hover' />
         </div>
-      : <UilFavorite onClick={openPopular} className='button-scale-on-hover' />
+      : <UilFavorite size="30" onClick={openPopular} className='button-scale-on-hover' />
     }
   </div>
 }

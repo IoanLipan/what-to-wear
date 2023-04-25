@@ -7,7 +7,7 @@ import WearSuggestion from './components/WearSuggestion';
 
 function App() {
 
-  const [query, setQuery] = useState({ q: "berlin" });
+  const [query, setQuery] = useState({ q: "Barcelona" });
   const [units, setUnits] = useState('metric');
   const [weather, setWeather] = useState(null);
 
