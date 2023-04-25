@@ -32,7 +32,7 @@ function App() {
       {weather && <TimeAndLocation weather={weather} />}
       {weather && <TemperatureAndDetails weather={weather} />}
       {weather && <WearSuggestion weather={weather} />}
-      <SearchBar setQuery={setQuery} setUnits={setUnits} />
+      <SearchBar setQuery={setQuery} setUnits={setUnits} weather={weather} />
     </div>
   );
 }

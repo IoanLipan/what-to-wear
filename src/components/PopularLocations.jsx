@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UilFavorite, UilTimes } from '@iconscout/react-unicons'
 
-function PopularLocations({setQuery}) {
+function PopularLocations({setQuery, weather, units}) {
   const [showPopular, setShowPopular] = useState(false);
 
   const openPopular = () => { setShowPopular(true); }
@@ -27,11 +27,19 @@ function PopularLocations({setQuery}) {
     },
   ]
 
+  const formatBackground = () => {
+    if (!weather) return "from-cyan-700 to-blue-700";
+    const threshold = (units === "metric") ? 20 : 68;
+    if (weather.temp <= threshold) return "from-cyan-700 to-blue-700";
+
+    return "from-yellow-700 to-orange-700";
+  }
+
   return <div className="text-white flex justify-start items-center">
     { showPopular
-      ? <div className='flex z-10 h-12 w-11/12 absolute items-center justify-around
-              bg-gradient-to-l from-cyan-700 to-blue-700
-              transition duration-300 ease-in-out transform border-transparent rounded-xl'>
+      ? <div className={`flex z-10 h-12 w-11/12 absolute items-center justify-around
+              bg-gradient-to-l ${formatBackground}
+              transition duration-300 ease-in-out transform border-transparent rounded-xl`}>
           {cities.map((city) => (
             <button onClick={() => setQuery({q: city.title})} key={city.id} className='text-white text-lg font-medium mr-1'>
               {city.title}
