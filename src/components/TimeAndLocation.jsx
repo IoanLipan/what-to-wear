@@ -9,7 +9,7 @@ function TimeAndLocation({ weather: { dt, timezone, name, country } }) {
 
         <p className='text-white text-3xl my-2 flex items-center gap-2'>
           <UilLocationPoint size="25" className="text-white" />
-          {`${name},${country}`}
+          {`${name}, ${country}`}
         </p>
         <p className='text-lg sm:text-xl text-white font-extralight'>{formatToLocalTime(dt, timezone)}<span className='hidden md:block text-end'>(Local Time)</span></p>
       </div>
